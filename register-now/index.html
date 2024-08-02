@@ -202,23 +202,38 @@
                                 <div class="col-12">
                                     <div class="form-group my-1">
                                         <label for="title" class="highlight-text required">Title: </label>
-                                        <textarea  class="form-control" rows="1" id="title" name="title" required></textarea>
+                                        <textarea class="form-control" rows="1" id="title" name="title"
+                                            required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group my-1">
                                         <label for="abstract" class="highlight-text required">Abstract: </label>
-                                        <textarea  class="form-control h-100" rows="5" id="abstract" name="abstract" required></textarea>
+                                        <textarea class="form-control h-100" rows="5" id="abstract" name="abstract"
+                                            required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-group my-1">
                                         <label for="keywords" class="highlight-text required">KeyWords: </label>
-                                        <textarea  class="form-control h-100" rows="1" id="keywords" name="keywords" placeholder="Enter keywords separated by commas" required></textarea>
+                                        <textarea class="form-control h-100" rows="2" id="keywords" name="keywords"
+                                            placeholder="Enter keywords separated by commas" required></textarea>
                                     </div>
                                 </div>
+
+                                <div class="col-md-12 my-5">
+                                    <div class="form-group">
+                                        <label for="submit-paper" class="highlight-text required">Upload Paper</label>
+                                        <input type="file" class="form-control-file" id="submit-paper"
+                                            name="paymentScreenshot" accept=".doc, .docx, .pdf" required>
+                                        <small class="form-text text-muted d-block">
+                                            Accepted file types: .doc, .docx, .pdf.<br>
+                                        </small>
+                                    </div>
+                                </div>
+
 
 
                                 <h5 class="mt-4">Corresponding Author<sup>1</sup> Details</h5>
@@ -300,44 +315,135 @@
                                 <div class="row mt-3" id="add-author-btn">
                                     <span
                                         class="ms-3 btn btn-sm btn-primary  rounded-circle d-flex align-items-center justify-content-center"
-                                        style="width: 30px; height: 30px;" onclick="addAuthorField()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M12 5l0 14" />
-                                                <path d="M5 12l14 0" />
-                                            </svg>
+                                        style="width: 30px; height: 30px;" onclick="addAuthorField()"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M12 5l0 14" />
+                                            <path d="M5 12l14 0" />
+                                        </svg>
                                     </span>
                                 </div>
 
                             </div>
                         </div>
-                        
+
 
 
 
                         <!-- Events section -->
                         <div class="text-center mt-5">
                             <h1>Payment</h1>
-                            <p>Scan the payment QR code are use the below bank details to complete the payment and upload a screenshot along with
+                            <p>Use the below bank details to complete the payment and upload a screenshot along with
                                 the transaction ID.</p>
                             <p class="highlight-text">Pay <strong id="payment-amount">USD $0 / INR ₹0</strong></p>
                         </div>
 
                         <div class="container">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mx-auto d-flex justify-content-center align-items-center">
+                                <!-- <div class="col-md-12 mx-auto d-flex justify-content-center align-items-center">
                                     <div class=""
                                         style="background-image: url(../img/payment-QR.jpg); min-height: 256px; min-width: 256px;  overflow: hidden;">
                                     </div>
+                                </div> -->
+                                <div class="col-12 mb-2">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class=" col-form-label">Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="paymentName"
+                                                value="THE PRINCIPAL KSR CE GENERAL" readonly>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span class="btn text-primary copy-btn" data-target="#paymentName">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-tabler icons-tabler-outline icon-tabler-copy">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path
+                                                        d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+                                                    <path
+                                                        d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row  d-flex justify-content-center align-items-center">
+                                        <label for="inputEmail3" class="col-form-label">Branch
+                                            Code/Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="paymentBranch"
+                                                value="751/THOKKAVADI" readonly>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span class="btn text-primary copy-btn" data-target="#paymentBranch">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-tabler icons-tabler-outline icon-tabler-copy">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path
+                                                        d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+                                                    <path
+                                                        d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row  d-flex justify-content-center align-items-center">
+                                        <label for="inputEmail3" class=" col-form-label">Account Number</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="paymentAccountNumber"
+                                                value="0751301000038303" readonly>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span class="btn text-primary copy-btn" data-target="#paymentAccountNumber">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-tabler icons-tabler-outline icon-tabler-copy">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path
+                                                        d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+                                                    <path
+                                                        d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row  d-flex justify-content-center align-items-center">
+                                        <label for="inputEmail3" class=" col-form-label">IFSC code</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="paymentIFSCCode"
+                                                value="DBSSOIN0751" readonly>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span class="btn text-primary copy-btn" data-target="#paymentIFSCCode">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-tabler icons-tabler-outline icon-tabler-copy">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path
+                                                        d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+                                                    <path
+                                                        d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="col-md-12">
-                                    <!-- ID Card upload -->
+
+                                <div class="col-md-12 mt-5">
+                                    <!-- ScreenShot upload -->
                                     <div class="form-group">
-                                        <label for="payment-screenshot" class="highlight-text required">Upload Transaction
+                                        <label for="payment-screenshot" class="highlight-text required">Upload
+                                            Transaction
                                             Screenshot:</label>
                                         <input type="file" class="form-control-file" id="payment-screenshot"
                                             name="paymentScreenshot" accept=".jpg, .jpeg, .png, .pdf"
@@ -351,7 +457,8 @@
                                 <div class="col-md-6">
                                     <!-- Transaction ID input -->
                                     <div class="form-group">
-                                        <label for="transaction-ID" class="highlight-text required">Transaction ID:</label>
+                                        <label for="transaction-ID" class="highlight-text required">Transaction
+                                            ID:</label>
                                         <input type="text" class="form-control" id="transaction-ID" name="transactionID"
                                             required>
                                     </div>
@@ -388,16 +495,11 @@
         </div>
     </section>
 
-
-
-
-
-
     <footer class="site-footer bg-dark text-light text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 m-2">
-                    <p class="site-info">Developed by <a href="https://innak.in" class=""
+                    <p class="site-info">Made by <a href="https://innak.in" class=""
                             style="color: gold;text-decoration: none;">Innak</a></p>
                     <a href="https://www.linkedin.com/company/innak/posts/?feedView=all" class="text-white "><svg
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -432,7 +534,7 @@
         let authorLimits = 6;
         let category = '';
 
-        $('#category').on('change', function() {
+        $('#category').on('change', function () {
 
             category = $(this).val();
             console.log(category);
@@ -454,36 +556,37 @@
         });
 
         function setPaymentDetails() {
-            if(category == ''){return 0;}
+            if (category == '') { return 0; }
             var count = authorCount - 2;
             $('#payment-amount').text(`USD $${USDPayment + (count * 12)} / INR ₹${INRPayment + (count * 1000)}`);
         }
 
 
         $(document).ready(function () {
-            loader.hide();
-            registorForm.submit(function (e) {
+            $('#registorForm').submit(function (e) {
                 e.preventDefault();
                 loader.show();
-                var data = $(this).serialize();
-                alert('Done.');
-                loader.hide();
-                // $.ajax({
-                //     url: "register.php",
-                //     method: "POST",
-                //     data: data,
-                //     success: function (data) {
-                //         loader.hide();
-                //         registorForm.hide();
-                //         $("#register-message").html(data);
-                //     }
-                // });
+
+                var formData = new FormData(this);
+
+                // Log the FormData contents
+                for (var pair of formData.entries()) {
+                    console.log(pair[0] + ': ' + pair[1]);
+                }
+
+                var files = formData.getAll('paymentScreenshot');
+                files.forEach(function (file) {
+                    console.log('File:', file.name, file.size, 'bytes');
+                });
+
+                loader.hide(); // Hide loader after logging data
             });
-        });
+        }); 
 
 
-        
-        function addAuthorField(){
+
+
+        function addAuthorField() {
             authorCount++;
             var authorField = ` 
                             <div class="row mt-4" id="author-field-id-${authorCount}">
@@ -541,18 +644,18 @@
                                 </div>
                             </div>
                         `;
-            
+
             authorContainer.append(authorField);
             setPaymentDetails();
-            if(authorCount >= authorLimits ){
+            if (authorCount >= authorLimits) {
                 return addAuthorBtn.hide();
             }
         }
 
-        function removeAuthor(id){
+        function removeAuthor(id) {
             $(`#author-field-id-${id}`).remove();
             authorCount--;
-            if(authorCount !== 2){
+            if (authorCount !== 2) {
                 var count = 3;
                 document.querySelectorAll('.author-count').forEach(element => {
                     element.textContent = count;
@@ -564,6 +667,26 @@
             setPaymentDetails();
             addAuthorBtn.show();
         }
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const input = document.querySelector(targetId);
+
+                    // Select the text
+                    input.select();
+                    input.setSelectionRange(0, 99999); // For mobile devices
+
+                    // Copy the text
+                    document.execCommand('copy');
+
+                    // Optionally, show a confirmation message
+                    alert('Copied to clipboard: ' + input.value);
+                });
+            });
+        });
 
     </script>
 
